@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { nav, team } from "@/data/team";
+import MobileNav from "./MobileNav";
 
 export default function Header() {
   return (
@@ -17,9 +18,12 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <a href="#contact" className="btn btn-ink btn-sm">
-          Work with us
-        </a>
+        <div className="header-end">
+          <a href="#contact" className="btn btn-ink btn-sm header-cta">
+            Work with us
+          </a>
+          <MobileNav />
+        </div>
       </div>
     </header>
   );
