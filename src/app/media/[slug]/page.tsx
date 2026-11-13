@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Gallery from "@/components/Gallery";
 import { ArrowLeft } from "@/components/icons";
 import { getAdjacent, getMediaProject, mediaProjects } from "@/lib/media";
+import { pageMetadata } from "@/lib/seo";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -15,15 +16,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const project = getMediaProject(slug);
   if (!project) return {};
-  return {
-    title: project.title,
-    description: project.summary,
-    openGraph: {
-      title: project.title,
-      description: project.summary,
-      images: [{ url: project.cover.src, width: project.cover.width, height: project.cover.height }],
-    },
-  };
+  // Share card built by `npm run brand` (public/og/<slug>.jpg).
+  return pageMetadata({
+    title: `${project.title} — ${project.category}`,
+    description: `${project.summary} ${project.client}.`,
+    path: `/media/${project.slug}`,
+    image: { url: `/og/${project.slug}.jpg`, width: 1200, height: 630, alt: `${project.title} — ${project.client}` },
+  });
 }
 
 export default async function MediaProjectPage({ params }: Params) {

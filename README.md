@@ -34,6 +34,22 @@ The form in the "Work with us" section emails each proposal to the team (the con
 
 Until `SMTP_USER` and `SMTP_PASS` are set, the form still works: it opens the visitor's email app with the proposal filled in and addressed to the team.
 
+## Icons, share previews and Google
+
+Everything that shows up outside the site is built from the logo and the real work:
+
+- **Browser tab / Google result icon** — `src/app/favicon.ico`, `icon.png`, `apple-icon.png`, plus `public/icons/` for the web app manifest.
+- **Share previews** (Facebook, WhatsApp, LinkedIn, X) — a 1200×630 card for the home, Media and Technology pages (`src/app/**/opengraph-image.jpg`) and one per design project (`public/og/<project>.jpg`).
+- **Search** — page titles and descriptions, canonical links, `sitemap.xml`, `robots.txt`, `manifest.webmanifest`, and structured data that tells Google the name (with the spellings Baseera / بصيرة), logo, email and Instagram/Facebook profiles (`src/lib/seo.ts`).
+
+Rebuild the icons and share cards after changing the logo or the work (needs Google Chrome and internet for the fonts):
+
+```bash
+npm run brand
+```
+
+For previews and Google to point at the right place, set `NEXT_PUBLIC_SITE_URL` to the live domain (see `.env.example`). After deploying: submit `https://<domain>/sitemap.xml` in Google Search Console, and refresh old link previews with Facebook's Sharing Debugger.
+
 ## Media images
 
 The design files live in `public/media/<project>/` as optimised WebP. To rebuild them from the original folder (which projects each file belongs to is listed in `scripts/works.manifest.json`):

@@ -5,12 +5,15 @@ import Reveal from "@/components/Reveal";
 import Videos from "@/components/sections/Videos";
 import WorkBrowser from "@/components/WorkBrowser";
 import { categories, mediaProjects, toCard, totalDesigns } from "@/lib/media";
+import { pageMetadata } from "@/lib/seo";
 import { videos } from "@/lib/videos";
 
-export const metadata: Metadata = {
-  title: "Media",
-  description: "Promo reels, motion graphics and films — plus brand identities, social media campaigns and print design.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Video, branding, social media & print",
+  description:
+    "Promo reels, motion graphics and films, plus logos and brand identities, social media campaigns and print design — by Bassera, Algeria.",
+  path: "/media",
+});
 
 export default function MediaPage() {
   return (

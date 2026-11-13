@@ -9,7 +9,8 @@
     "lint": "eslint",
     "capture": "node scripts/capture.mjs",
     "assets": "node scripts/build-assets.mjs",
-    "videos": "node scripts/build-videos.mjs"
+    "videos": "node scripts/build-videos.mjs",
+    "brand": "node --experimental-strip-types --no-warnings scripts/build-brand.mjs"
   },
   "dependencies": {
     "next": "16.4.6",

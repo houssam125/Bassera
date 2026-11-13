@@ -5,7 +5,13 @@
 export const team = {
   name: "Bassera",
   location: "Algeria",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  // The public address, used for share images, Google and the sitemap. Set NEXT_PUBLIC_SITE_URL to the
+  // real domain; on Vercel the production domain is picked up automatically when it isn't set.
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
   title: "Bassera — media and technology, under one roof",
   description:
     "A creative and technical team that designs brands, produces social media, print and video, and builds websites, business systems and mobile apps — from first sketch to launch.",

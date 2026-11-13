@@ -2,11 +2,14 @@ import type { Metadata } from "next";
 import Products from "@/components/sections/Products";
 import Stack from "@/components/sections/Stack";
 import TechServices from "@/components/sections/TechServices";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Technology",
-  description: "Websites, web platforms, CRM and ERP systems, and Flutter mobile apps — designed and built end to end.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Websites, CRM & ERP systems and mobile apps",
+  description:
+    "Websites, web platforms, CRM and ERP systems, and Flutter mobile apps — designed, built and deployed end to end by Bassera, Algeria.",
+  path: "/tech",
+});
 
 export default function TechPage() {
   return (
