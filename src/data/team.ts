@@ -54,7 +54,7 @@ export const ticker = [
   "Mobile apps",
   "CRM & ERP",
   "Dashboards",
-  "APIs",
+
 ] as const;
 
 export const capabilities = [
@@ -170,7 +170,7 @@ export const products: Product[] = [
     tags: ["React", "TypeScript", "Dashboard", "AR · EN · FR"],
     href: "https://al-alamia.net/",
     displayUrl: "al-alamia.net",
-    stage: "#fbe1e1",
+    stage: "#d6ecf6",
     desktop: desktop("alamia"),
     mobile: mobile("alamia"),
   },
@@ -188,7 +188,7 @@ export const products: Product[] = [
     tags: ["Institutional", "Multi-language", "Responsive"],
     href: "https://university-mila-alpha.vercel.app/",
     displayUrl: "university-mila-alpha.vercel.app",
-    stage: "#ffe9c4",
+    stage: "#dfe6f3",
     desktop: desktop("mila"),
     mobile: mobile("mila"),
   },

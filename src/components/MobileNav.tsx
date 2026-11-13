@@ -48,7 +48,7 @@ export default function MobileNav() {
             </Link>
           ))}
         </nav>
-        <a href="#contact" className="btn btn-lime mnav-cta" onClick={close}>
+        <a href="#contact" className="btn btn-sky mnav-cta" onClick={close}>
           Work with us
         </a>
         <div className="mnav-contact">

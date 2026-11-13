@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Cairo, Poppins } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Contact from "@/components/sections/Contact";
@@ -8,9 +8,15 @@ import { alternateNames, organizationJsonLd, pageMetadata } from "@/lib/seo";
 import "./globals.css";
 import "./areas.css";
 
-const bricolage = Bricolage_Grotesque({ variable: "--font-bricolage", subsets: ["latin"], display: "swap" });
-const dm = DM_Sans({ variable: "--font-dm", subsets: ["latin"], display: "swap" });
-const jb = JetBrains_Mono({ variable: "--font-jb", subsets: ["latin"], display: "swap" });
+// Brand fonts, matching the Instagram posts and the brand board: Poppins for Latin text,
+// Cairo for Arabic.
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+const cairo = Cairo({ variable: "--font-cairo", subsets: ["arabic"], display: "swap" });
 
 // Icons (favicon.ico, icon.png, apple-icon.png) and the share image (opengraph-image.jpg) are files in
 // this folder, built from the logo and the work by `npm run brand`.
@@ -45,7 +51,7 @@ export const metadata: Metadata = {
   ...(process.env.GOOGLE_SITE_VERIFICATION ? { verification: { google: process.env.GOOGLE_SITE_VERIFICATION } } : {}),
 };
 
-export const viewport: Viewport = { themeColor: "#f4f1e8" };
+export const viewport: Viewport = { themeColor: "#eef3f7" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
@@ -53,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${bricolage.variable} ${dm.variable} ${jb.variable}`}
+      className={`${poppins.variable} ${cairo.variable}`}
     >
       <body>
         <script

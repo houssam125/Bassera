@@ -24,7 +24,7 @@ export default function Contact() {
               </p>
               <div className="hero-actions">
                 {email && (
-                  <a href={`mailto:${email}`} className="btn btn-lime">
+                  <a href={`mailto:${email}`} className="btn btn-sky">
                     {email} <ArrowUpRight />
                   </a>
                 )}
@@ -38,7 +38,7 @@ export default function Contact() {
                     {l.label} <ArrowUpRight />
                   </a>
                 ))}
-                <SeeWorkLink className={email || phone || external.length ? "btn btn-line" : "btn btn-lime"}>
+                <SeeWorkLink className={email || phone || external.length ? "btn btn-line" : "btn btn-sky"}>
                   See our work <ArrowUpRight />
                 </SeeWorkLink>
               </div>

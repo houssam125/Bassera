@@ -88,7 +88,7 @@ export default function ProposalForm() {
       <input className="hp" type="text" name="company_website" tabIndex={-1} autoComplete="off" aria-hidden />
 
       <div className="propose-foot">
-        <button type="submit" className="btn btn-lime" disabled={pending}>
+        <button type="submit" className="btn btn-sky" disabled={pending}>
           {pending ? "Sending…" : "Send proposal"} <ArrowRight />
         </button>
         <p className="propose-status" data-status={state.status} role="status" aria-live="polite">

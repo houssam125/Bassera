@@ -91,32 +91,32 @@ const handle = "@" + team.contact.instagram.replace(/\/+$/, "").split("/").pop()
 
 const page = (kicker, titleHtml, sub, art, titleSize = 60) => `<!doctype html><html><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cairo:wght@400;600&display=block" rel="stylesheet">
 <style>
-  :root { --paper:#f4f1e8; --card:#fffdf8; --ink:#14131a; --ink2:#3d3c46; --muted:#6f6e79; --accent:#0e7c9e; --lime:#d6ff3d; }
+  :root { --paper:#eef3f7; --card:#ffffff; --ink:#002a3e; --ink2:#2b4a5c; --muted:#5e7787; --accent:#0e7c9e; --sky:#4cc0ea; }
   * { box-sizing:border-box; margin:0; padding:0; }
-  body { width:1200px; height:630px; overflow:hidden; background:var(--paper); font-family:"DM Sans",sans-serif; color:var(--ink); }
+  body { width:1200px; height:630px; overflow:hidden; background:var(--paper); font-family:"Poppins","Cairo",sans-serif; color:var(--ink); }
   .card { position:relative; width:1200px; height:630px; display:grid; grid-template-columns:600px 1fr; gap:24px; padding:56px 56px 50px; overflow:hidden;
-    background-image:radial-gradient(rgba(20,19,26,.10) 1.2px, transparent 1.3px); background-size:20px 20px; }
-  .card::after { content:""; position:absolute; left:0; right:0; bottom:0; height:12px; background:var(--lime); border-top:2px solid var(--ink); }
+    background-image:radial-gradient(rgba(0,42,62,.10) 1.2px, transparent 1.3px); background-size:20px 20px; }
+  .card::after { content:""; position:absolute; left:0; right:0; bottom:0; height:12px; background:var(--ink); border-top:4px solid var(--accent); }
   .text { display:flex; flex-direction:column; min-width:0; }
-  .brand { display:flex; align-items:center; gap:16px; font-family:"Bricolage Grotesque"; font-weight:800; font-size:38px; letter-spacing:-.03em; }
+  .brand { display:flex; align-items:center; gap:16px; font-family:"Poppins"; font-weight:700; font-size:36px; letter-spacing:-.01em; }
   .brand img { width:64px; height:64px; border-radius:16px; border:2px solid var(--ink); }
-  .kicker { margin-top:40px; display:flex; align-items:center; gap:12px; font-family:"JetBrains Mono"; font-size:19px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+  .kicker { margin-top:40px; display:flex; align-items:center; gap:12px; font-family:"Poppins"; font-weight:600; font-size:17px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
   .kicker::before { content:""; width:12px; height:12px; border-radius:50%; background:var(--accent); }
-  h1 { margin-top:18px; font-family:"Bricolage Grotesque"; font-weight:700; font-size:${titleSize}px; line-height:1.02; letter-spacing:-.035em; }
-  mark { color:inherit; background:linear-gradient(transparent 58%, var(--lime) 58%, var(--lime) 92%, transparent 92%); padding:0 .06em; }
+  h1 { margin-top:18px; font-family:"Poppins","Cairo"; font-weight:700; font-size:${titleSize}px; line-height:1.1; letter-spacing:-.02em; }
+  mark { color:inherit; background:linear-gradient(transparent 58%, var(--sky) 58%, var(--sky) 92%, transparent 92%); padding:0 .06em; }
   .sub { margin-top:22px; font-size:24px; line-height:1.35; color:var(--ink2); }
-  .foot { margin-top:auto; font-family:"JetBrains Mono"; font-size:18px; color:var(--muted); }
+  .foot { margin-top:auto; font-family:"Poppins"; font-weight:500; font-size:18px; color:var(--muted); }
   .art { position:relative; min-width:0; }
   .tile { position:absolute; overflow:hidden; border:2px solid var(--ink); border-radius:18px; background:var(--card); box-shadow:7px 7px 0 var(--ink); }
   .tile img { display:block; width:100%; height:100%; object-fit:cover; object-position:top; }
-  .tag { position:absolute; left:10px; bottom:10px; padding:5px 10px; border-radius:999px; border:2px solid var(--ink); background:var(--card); font:700 13px/1 "JetBrains Mono"; letter-spacing:.06em; text-transform:uppercase; }
-  .tag.v { background:var(--lime); }
+  .tag { position:absolute; left:10px; bottom:10px; padding:5px 10px; border-radius:999px; border:2px solid var(--ink); background:var(--card); font:700 12px/1 "Poppins"; letter-spacing:.08em; text-transform:uppercase; }
+  .tag.v { background:var(--sky); }
   .browser { position:absolute; overflow:hidden; border:2px solid var(--ink); border-radius:14px; background:#fff; box-shadow:8px 8px 0 var(--ink); }
   .bar { height:30px; display:flex; align-items:center; gap:6px; padding:0 12px; background:#ebe7da; border-bottom:2px solid var(--ink); }
-  .bar i { width:10px; height:10px; border-radius:50%; border:1.5px solid var(--ink); background:#fff; } .bar i:first-child { background:var(--lime); }
-  .bar span { margin-left:8px; flex:1; height:18px; border-radius:5px; background:#fff; border:1px solid rgba(20,19,26,.14); font:12px/18px "JetBrains Mono"; color:var(--muted); padding:0 8px; white-space:nowrap; overflow:hidden; }
+  .bar i { width:10px; height:10px; border-radius:50%; border:1.5px solid var(--ink); background:#fff; } .bar i:first-child { background:var(--sky); }
+  .bar span { margin-left:8px; flex:1; height:18px; border-radius:5px; background:#fff; border:1px solid rgba(0,42,62,.14); font:12px/18px "Poppins"; color:var(--muted); padding:0 8px; white-space:nowrap; overflow:hidden; }
   .browser img { display:block; width:100%; aspect-ratio:1440/900; object-fit:cover; object-position:top; }
   .phone { position:absolute; padding:6px; border-radius:26px; border:2px solid var(--ink); background:var(--ink); box-shadow:7px 7px 0 var(--accent); }
   .phone img { display:block; width:100%; aspect-ratio:780/1688; object-fit:cover; border-radius:20px; }
@@ -147,7 +147,7 @@ cards.push({
     "Branding · Social media · Video · Websites · Mobile apps · CRM & ERP",
     browser(await img("public" + lead.desktop.src, 900), lead.displayUrl, "left:10px; top:50px; width:470px; transform:rotate(-2deg)") +
       `<div class="phone" style="right:6px; top:150px; width:150px; transform:rotate(3deg)"><img src="${await img("public/videos/48hr-express-2.webp", 320)}"></div>` +
-      tile(await img("public" + cover("masjid-al-tawba").src, 360), "left:-6px; top:330px; width:170px; height:170px; transform:rotate(-6deg); box-shadow:7px 7px 0 var(--lime)", "Logo") +
+      tile(await img("public" + cover("masjid-al-tawba").src, 360), "left:-6px; top:330px; width:170px; height:170px; transform:rotate(-6deg); box-shadow:7px 7px 0 var(--sky)", "Logo") +
       tile(await img("public/videos/dental-clinic-film.webp", 500), "left:186px; top:350px; width:250px; height:141px; transform:rotate(3deg); box-shadow:7px 7px 0 var(--accent)", "Film", true),
     58,
   ),
