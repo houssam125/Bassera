@@ -1,0 +1,32 @@
+import type { Metadata } from "next";
+import Products from "@/components/sections/Products";
+import Stack from "@/components/sections/Stack";
+import TechServices from "@/components/sections/TechServices";
+
+export const metadata: Metadata = {
+  title: "Technology",
+  description: "Websites, web platforms, CRM and ERP systems, and Flutter mobile apps — designed and built end to end.",
+};
+
+export default function TechPage() {
+  return (
+    <>
+      <section className="page-head">
+        <div className="container">
+          <p className="kicker">Area 02 · Technology</p>
+          <h1>
+            Websites, systems &amp; <span className="mark">mobile apps</span>.
+          </h1>
+          <p className="page-lead">
+            We design and build websites, web platforms, CRM and ERP systems, and mobile apps with Flutter — from the
+            interface people see to the back-end and data behind it, deployed and cared for after launch.
+          </p>
+        </div>
+      </section>
+
+      <TechServices />
+      <Products />
+      <Stack />
+    </>
+  );
+}

@@ -1,0 +1,14 @@
+{
+  "source": "Google Drive folder “videos”: https://drive.google.com/drive/folders/1i9pFJrTslCMEvfcODCDsrDbbXnLTfbi4",
+  "videos": {
+    "48hr-express-1": { "file": "48HR express/1.mp4", "poster": 6 },
+    "48hr-express-2": { "file": "48HR express/48 hr 2.mp4", "poster": 1 },
+    "dental-clinic-film": { "file": "Clinic promo/promo.mp4", "poster": 2, "preview": { "from": 1, "for": 14 } },
+    "ecom-multi-service": { "file": "Motion graphics/loulou.mov", "poster": 8.5 },
+    "menttify": { "file": "Motion graphics/menttify_med.mov", "poster": 27 },
+    "el-ameed-institute": { "file": "SCHOOLS/Al-amid/houssam course.mp4", "poster": 5.5 },
+    "safir-al-marifa": { "file": "SCHOOLS/SAFIR/SAFIR AL-MARIFA.mov", "poster": 10 },
+    "tunisia-diving": { "file": "TUNIS/1.mov", "poster": 26, "preview": { "from": 21, "for": 16 } },
+    "tunisia-parasailing": { "file": "TUNIS/2.mp4", "poster": 0.8, "preview": { "from": 12, "for": 16 } }
+  }
+}
